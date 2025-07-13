@@ -1,0 +1,75 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-zig-zag" [fullScreen]="true">
+  <p style="color: white;">Loading...</p>
+</ngx-spinner>
+
+<div class="content">
+  <h1 style="text-align: center; margin-top: 1rem;">Admin Dashboard</h1>
+  <div class="header">
+    <div class="admin_Profile">
+      <button type="button" class="btn btn-info">
+        <i class="bi bi-person-circle" aria-hidden="true"> {{adminUserData.firstName}} {{adminUserData.lastName}}</i>
+      </button>
+    </div>
+    <div class="admin_Button">
+      <button type="button" routerLink="/adminCreateUserForm" class="btn btn-success">
+        <i class="fa fa-user-plus" aria-hidden="true"></i> Create User
+      </button>
+      <button type="button" (click)="logout()" class="btn btn-danger">
+        <i class="fa fa-sign-out" aria-hidden="true"> Logout</i>
+      </button>
+    </div>
+  </div>
+  <div class="table-responsive admin_table">
+    <table class="table sticky-header">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">Full Name</th>
+          <th scope="col">Email</th>
+          <th scope="col">Employee Id</th>
+          <th scope="col">Date Of Hire</th>
+          <th scope="col">Active Status</th>
+          <th scope="col">Password</th>
+          <th scope="col">Offer Letter Upload</th>
+          <th scope="col">Offer Letter Download</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of getAllUsers">
+          <td>{{data.firstName}} {{data.lastName}}</td>
+          <td>{{data.email}}</td>
+          <td>{{data.employeeId}}</td>
+          <td>{{data.dateOfHire}}</td>
+          <td>{{data.employeeStatus}}</td>
+          <td>{{data.password}}</td>
+          <td>
+            <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover"
+              (click)="selectFile(data._id)">
+              <i class="bi bi-file-arrow-up-fill"></i> Upload
+              <input type="file" [id]="'fileUpload_' + data._id" style="display: none;"
+                (change)="offerLetterUpload($event)" />
+            </button>
+          </td>
+
+          <td>
+            <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+              <i class="bi bi-file-earmark-arrow-down-fill" (click)="offerLetterDownload(data._id)">Download</i>
+            </button>
+          </td>
+
+          <td class="text-end admin_icon">
+            <a class="btn btn-sm btn-neutral admin_icon"><i class="fa fa-eye" aria-hidden="true"
+                (click)="viewUserDetails(data._id)">View</i></a>
+            <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover">
+              <i class="bi bi-pencil" (click)="editUserDetail(data._id)">Edit</i>
+            </button>
+            <button type="button" class="btn btn-sm btn-square btn-neutral text-danger-hover admin_icon"
+              (click)="deleteUser(data._id)">
+              <i class="bi bi-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

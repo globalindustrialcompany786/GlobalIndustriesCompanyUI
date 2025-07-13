@@ -1,0 +1,18 @@
+@media (max-width: 989px) {
+  .admin_button {
+    display: flex;
+    margin-top: 10px;
+  }
+}
+
+.header_text_icon{
+  cursor: pointer;
+}
+
+.header_text_icon:hover{
+  color: red;
+}
+
+.nav-link:hover {
+  color: red;
+}

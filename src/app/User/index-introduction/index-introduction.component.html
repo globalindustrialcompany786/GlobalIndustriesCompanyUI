@@ -1,0 +1,28 @@
+<!-- ======= Call To Action Section ======= -->
+<section id="call-to-action" class="call-to-action">
+  <div class="container" data-aos="zoom-out">
+
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <h3>Call To Action</h3>
+        <h1 style="color: white;"><strong>Explore Opportunities with Global Industries Company</strong></h1>
+        <a class="cta-btn" routerLink="/contact-us">Call To Action</a>
+      </div>
+    </div>
+
+  </div>
+</section><!-- End Call To Action Section -->
+
+<div class="container mb-5">
+  <div class="row">
+    <div class="four col-md-3" *ngFor="let item of counters; let i = index">
+      <div class="counter-box" [ngClass]="{'colored': item.colored}">
+        <i [class]="item.iconClass"></i>
+        <span class="counter" #counter>{{ item.value }}</span>
+        <p>{{ item.label }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,58 @@
+<ngx-spinner bdColor="rgba(0, 0, 0, 0.8)" size="medium" color="#fff" type="ball-zig-zag" [fullScreen]="true">
+  <p style="color: white"> Loading... </p>
+</ngx-spinner>
+<section class="h-100 gradient-form" style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+
+                <div class="text-center">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+                    style="width: 185px;" alt="logo">
+                  <h4 class="mt-1 mb-5 pb-1">User Login Form</h4>
+                </div>
+
+                <form [formGroup]="loginForm" (ngSubmit)="submitForm()" novalidate>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="email">Username</label>
+                    <input type="email" id="email" class="form-control"
+                      [class.is-invalid]="isInvalidAndTouched('email')" placeholder="Enter email address"
+                      formControlName="email" />
+
+                  </div>
+
+                  <div class="form-outline mb-4">
+                    <label class="form-label" for="password">Password</label>
+                    <input type="password" id="password" class="form-control"
+                      [class.is-invalid]="isInvalidAndTouched('password')" placeholder="Enter password"
+                      formControlName="password" />
+
+                  </div>
+
+                  <div class="pt-1 mb-5 pb-1">
+                    <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit"
+                      [disabled]="loginForm.invalid">Log in</button>
+                  </div>
+                </form>
+
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h4 class="mb-4">We are more than just a company</h4>
+                <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                  tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                  exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,16 @@
+.header_title{
+  display: flex;
+  justify-content: space-between;
+}
+
+.header_title:hover{
+  cursor: pointer;
+}
+
+.userProfile{
+  object-fit: cover;
+  width: 150px;
+  height: 150px;
+  border-radius: 100%;
+  box-shadow: 0 0 5px black;
+}

@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid header_navBar_hover">
+    <a class="navbar-brand header_text_icon" href="#">Global Industries Company</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            Our Services
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" routerLink="/construction">Construction</a></li>
+            <li><a class="dropdown-item" routerLink="/driver">Driver</a></li>
+            <li><a class="dropdown-item" routerLink="/restaurant-hotel">Restaurant & Hotel</a></li>
+            <li><a class="dropdown-item" routerLink="/refining-chemical">Refining Chemical</a></li>
+            <li><a class="dropdown-item" routerLink="/factory-workers">Factory Workers</a></li>
+            <li><a class="dropdown-item" routerLink="/food-packaging">Food Packaging</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about-us">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/our-mission">Mission</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/career">Career</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact-us" >Contact Us</a>
+        </li>
+      </ul>
+      <button routerLink="/userForm" style="margin-right: 1rem;" class="btn btn-outline-success admin_button" type="submit" *ngIf="!isUserLoggedIn()">User Login</button>
+      <button routerLink="/userDashBoard" style="margin-right: 1rem;" class="btn btn-outline admin_button" type="submit" *ngIf="isUserLoggedIn()"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{user}}</button>
+      <button routerLink="/userForm" style="margin-right: 1rem;" class="btn btn-danger admin_button" type="submit" *ngIf="isUserLoggedIn()" (click)="logout()"><i class="fa fa-sign-out" aria-hidden="true"> Logout</i></button>
+      <button routerLink="/adminForm" class="btn btn-outline-success admin_button" type="submit" *ngIf="!isAdminLoggedIn()">Admin Login</button>
+      <button routerLink="/adminDashBoard" class="btn btn-outline admin_button" type="submit" *ngIf="isAdminLoggedIn()"><i class="fa fa-user-circle-o" aria-hidden="true"></i> {{admin}}</button>
+    </div>
+  </div>
+</nav>

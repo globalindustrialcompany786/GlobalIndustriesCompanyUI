@@ -1,0 +1,116 @@
+h1,h2,h3 {
+  margin: 0;
+  font-family: 'IBM Plex Sans',Serif;
+}
+p {
+  margin: 0;
+  font-size: 18px;
+  line-height: 24px;
+}
+a {
+  color: #005eeb;
+}
+a:hover {
+color: #ffb200;
+}
+.teamWrapper {
+  margin-top: 50px;
+}
+.container {
+--container: 1160px;
+max-width: var(--container);
+margin: auto;
+}
+.teamGrid {
+display: grid;
+grid-template-columns: 32.33% 32.33% 32.33%;
+column-gap: 3.5%;
+row-gap: 22.5%;
+margin-top: 4rem;
+margin-bottom: 8rem;
+}
+
+@media (max-width: 990px) {
+.teamGrid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5rem;
+}
+.colmun{
+  width: -webkit-fill-available;
+}
+}
+
+.teamcolinner {
+  position: relative;
+}
+
+.teamcolinner {
+  position: relative;
+  border: 1px dashed #ddd;
+  min-height: 100px;
+  background: #fff;
+  z-index: 9;
+}
+.teamcol {
+  padding: 15px;
+  background: #fff;
+  border-radius: 10px;
+  position: relative;
+  transition: transform 1s ease-in-out;
+}
+.teamcol:hover {
+  transform: translateY(-30px);
+  box-shadow: 0px 3px 10px 3px rgb(170 170 173 / 0.5);
+  transition: transform 1s ease-in-out;
+}
+.teamcol:before {
+  content: "";
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: -webkit-linear-gradient(#ffbf00, #ffa000);
+  border-top-right-radius: 10px;
+  transition: width 1s ease-in-out;
+}
+.teamcol:after {
+  content: "";
+  width: 50%;
+  height: 50%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  background: -webkit-linear-gradient(#0052cc, #005fec);
+  border-bottom-left-radius: 10px;
+  transition: width 1s ease-in-out;
+}
+.teamcol:hover::before, .teamcol:hover::after {
+  width: 100%;
+  transition: width 1s ease-in-out;
+}
+.member-name {
+  margin-top: 20px;
+}
+.member-info {
+  padding: 10px 20px;
+}
+.social-listing {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+.social-listing >li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: #f4f5f7;
+  border-radius: 50%;
+  margin: 5px;
+}
