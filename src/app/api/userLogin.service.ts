@@ -6,10 +6,10 @@ import { BehaviorSubject, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserLoginService {
-  private apiUserUrl = 'https://www.globalindustriescompany.ca:8080/api/user';
-  private apiWorkExperienceUrl = 'https://www.globalindustriescompany.ca:8080/api/workExperience';
-  private apiDependantUrl = 'https://www.globalindustriescompany.ca:8080/api/dependant';
-  private apiEducationUrl = 'https://www.globalindustriescompany.ca:8080/api/education';
+  private apiUserUrl = 'https://globalindustriescompanybackend.onrender.com/api/user';
+  private apiWorkExperienceUrl = 'https://globalindustriescompanybackend.onrender.com/api/workExperience';
+  private apiDependantUrl = 'https://globalindustriescompanybackend.onrender.com/api/dependant';
+  private apiEducationUrl = 'https://globalindustriescompanybackend.onrender.com/api/education';
 
   private userDataSubject = new BehaviorSubject<any>(null);
   userData = this.userDataSubject.asObservable();
@@ -30,7 +30,7 @@ export class UserLoginService {
   }
 
   getUserImage(imageUrlPath:string){
-    return this.http.get<any>(`https://www.globalindustriescompany.ca:8080/${imageUrlPath}`)
+    return this.http.get<any>(`https://globalindustriescompanybackend.onrender.com/${imageUrlPath}`)
   }
 
   updateUserPersonalDetail(userToken: any, body: any): Observable<any> {

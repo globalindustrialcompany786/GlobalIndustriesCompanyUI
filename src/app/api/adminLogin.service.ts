@@ -6,13 +6,13 @@ import { Observable } from "rxjs";
   providedIn: "root",
 })
 export class AdminLoginService {
-  private adminApiUrl = "https://www.globalindustriescompany.ca:8080/api/admin";
+  private adminApiUrl = "https://globalindustriescompanybackend.onrender.com/api/admin";
 
-  private userRegisterUrl = "https://www.globalindustriescompany.ca:8080/api/user";
+  private userRegisterUrl = "https://globalindustriescompanybackend.onrender.com/api/user";
 
-  private apiWorkExperienceUrl = 'https://www.globalindustriescompany.ca:8080/api/workExperience';
-  private apiDependantUrl = 'https://www.globalindustriescompany.ca:8080/api/dependant';
-  private apiEducationUrl = 'https://www.globalindustriescompany.ca:8080/api/education';
+  private apiWorkExperienceUrl = 'https://globalindustriescompanybackend.onrender.com/api/workExperience';
+  private apiDependantUrl = 'https://globalindustriescompanybackend.onrender.com/api/dependant';
+  private apiEducationUrl = 'https://globalindustriescompanybackend.onrender.com/api/education';
 
   constructor(private http: HttpClient) {
   }
